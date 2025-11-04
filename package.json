@@ -1,7 +1,7 @@
 {
   "name": "myportfolio",
   "version": "0.1.0",
-  "homepage": "https://github.com/LKONDETI/portfolio",
+  "homepage": "https://LKONDETI.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
