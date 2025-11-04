@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/LKONDETI/portfolio/static/css/main.5175a059.css",
+    "main.js": "/LKONDETI/portfolio/static/js/main.30ed045f.js",
+    "static/js/453.0b52fa76.chunk.js": "/LKONDETI/portfolio/static/js/453.0b52fa76.chunk.js",
+    "index.html": "/LKONDETI/portfolio/index.html",
+    "main.5175a059.css.map": "/LKONDETI/portfolio/static/css/main.5175a059.css.map",
+    "main.30ed045f.js.map": "/LKONDETI/portfolio/static/js/main.30ed045f.js.map",
+    "453.0b52fa76.chunk.js.map": "/LKONDETI/portfolio/static/js/453.0b52fa76.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5175a059.css",
+    "static/js/main.30ed045f.js"
+  ]
+}
