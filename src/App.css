@@ -105,9 +105,26 @@ body {
   backdrop-filter: blur(16px);
 }
 
+.hero-title {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    #60a5fa,
+    #a855f7,
+    #f97316,
+    #fb7185
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero-subtitle {
-  margin: 0.4rem 0 0;
-  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  margin: 1rem 0 0;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 400;
   color: rgba(191, 219, 254, 0.9);
 }
@@ -287,11 +304,31 @@ body {
   flex: 1;
 }
 
+.portfolio-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(30, 64, 175, 0.7);
+  padding: 0.95rem 1.5rem;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.75);
+}
+
+.portfolio-nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
 .nav-button {
   border-radius: 999px;
   border: 1px solid transparent;
-  padding: 0.45rem 0.95rem; /* smaller */
-  font-size: 0.85rem;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
   font-weight: 500;
   background: transparent;
   color: #d1d5db;
@@ -917,15 +954,9 @@ body {
 
 @media (min-width: 768px) {
   .hero {
-  position: relative;
-  min-height: calc(100vh - 64px); /* a bit shorter, accounts for header */
-  padding: 5rem 1.5rem 3rem;      /* extra top padding so it's not cramped */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
 
   .hero-inner {
     text-align: center;

@@ -107,17 +107,71 @@ export default function Portfolio() {
   const sections = ["about", "experience", "projects", "skills", "education"];
 
   return (
-  <div className="portfolio">
-    {/* TOP HEADER */}
-    <header className="portfolio-header">
-      <div className="portfolio-header-inner">
-        {/* Left: Name / Logo */}
-        <div className="header-brand">
-          <span className="header-logo-text">Lakshmi Sravani Kondeti</span>
+    <div className="portfolio">
+      {/* HERO */}
+      <div className="hero">
+        <div className="hero-bg">
+          <div className="hero-orb hero-orb-blue" />
+          <div className="hero-orb hero-orb-purple" />
         </div>
 
-        {/* Right: Nav items */}
-        <nav className="header-nav">
+        <div className="hero-inner">
+          <div className="hero-text animate-fadeIn">
+            <h1 className="hero-title">Lakshmi Sravani Kondeti</h1>
+            <p className="hero-subtitle">
+              Full-Stack Developer &amp; Data Science Graduate
+            </p>
+
+            <p className="hero-description">
+              Building scalable applications with React Native, FastAPI, and Spring Boot.
+              Passionate about machine learning and creating meaningful solutions.
+            </p>
+
+            <div className="hero-contact">
+              <a
+                href="mailto:sravanikondeti4@gmail.com"
+                className="hero-contact-item"
+              >
+                <span>sravanikondeti4@gmail.com</span>
+              </a>
+              <div className="hero-contact-item hero-contact-item-static">
+                <span>Lake Mary, FL</span>
+              </div>
+            </div>
+
+            <div className="hero-links">
+              <a
+                href="https://www.linkedin.com/in/kondeti-sravani/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-pill hero-pill-blue"
+              >
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://github.com/LKONDETI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-pill hero-pill-purple"
+              >
+                <span>GitHub</span>
+              </a>
+            </div>
+
+            <div className="hero-icons">
+              <span className="icon-bounce delay-0">⚛️</span>
+              <span className="icon-pulse delay-300">🐍</span>
+              <span className="icon-bounce delay-500">🚀</span>
+              <span className="icon-pulse delay-700">🐳</span>
+              <span className="icon-bounce delay-900">🤖</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* NAV */}
+      <nav className="portfolio-nav">
+        <div className="portfolio-nav-inner">
           {sections.map((section) => (
             <button
               key={section}
@@ -130,69 +184,8 @@ export default function Portfolio() {
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </button>
           ))}
-        </nav>
-      </div>
-    </header>
-
-    {/* HERO */}
-    <div className="hero">
-      <div className="hero-bg">
-        <div className="hero-orb hero-orb-blue" />
-        <div className="hero-orb hero-orb-purple" />
-      </div>
-
-      <div className="hero-inner">
-        <div className="hero-text animate-fadeIn">
-          <p className="hero-subtitle">
-            Full-Stack Developer &amp; Data Science Graduate
-          </p>
-
-          <p className="hero-description">
-            Building scalable applications with React Native, FastAPI, and Spring Boot.
-            Passionate about machine learning and creating meaningful solutions.
-          </p>
-
-          <div className="hero-contact">
-            <a
-              href="mailto:sravanikondeti4@gmail.com"
-              className="hero-contact-item"
-            >
-              <span>sravanikondeti4@gmail.com</span>
-            </a>
-            <div className="hero-contact-item hero-contact-item-static">
-              <span>Lake Mary, FL</span>
-            </div>
-          </div>
-
-          <div className="hero-links">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-pill hero-pill-blue"
-            >
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-pill hero-pill-purple"
-            >
-              <span>GitHub</span>
-            </a>
-          </div>
-
-          <div className="hero-icons">
-            <span className="icon-bounce delay-0">⚛️</span>
-            <span className="icon-pulse delay-300">🐍</span>
-            <span className="icon-bounce delay-500">🚀</span>
-            <span className="icon-pulse delay-700">🐳</span>
-            <span className="icon-bounce delay-900">🤖</span>
-          </div>
         </div>
-      </div>
-    </div>
+      </nav>
 
       {/* MAIN SECTIONS */}
       <main className="portfolio-main">
