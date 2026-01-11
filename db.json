@@ -1,0 +1,132 @@
+{
+  "profile": {
+    "name": "Lakshmi Sravani Kondeti",
+    "title": "Full-Stack Developer & Data Science Graduate",
+    "bio_short": "Building scalable applications with React Native, FastAPI, and Spring Boot. Passionate about machine learning and creating meaningful solutions.",
+    "bio_long": [
+      "Recently graduated with a Master's degree in Data Science & Analytics from Florida Atlantic University (May 2025, GPA: 3.63/4.0). I specialize in building robust, scalable applications using modern technologies like React Native, FastAPI, and Spring Boot.",
+      "With hands-on experience in both software development and machine learning, I've worked on projects ranging from mobile banking applications to fraud detection systems. I'm passionate about leveraging technology to solve real-world problems and creating intuitive user experiences.",
+      "Currently working as a React/React Native Developer at Worldwide Interactive Services, where I develop cross-platform banking solutions and analyze user behavior to improve application performance."
+    ],
+    "email": "sravanikondeti4@gmail.com",
+    "location": "Lake Mary, FL",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  "stats": [
+    { "label": "Years Experience", "value": "3+" },
+    { "label": "Projects Completed", "value": "10+" },
+    { "label": "Cloud Certifications", "value": "2" }
+  ],
+  "skills": {
+    "languages": ["React Native", "React.js", "JavaScript", "TypeScript", "Python", "Java", "C#", "HTML5", "CSS3"],
+    "frameworks": ["Expo.dev", "FastAPI", "Spring Boot", "Tailwind CSS", "NativeWind"],
+    "databases": ["PostgreSQL", "MongoDB", "Supabase"],
+    "tools": ["Git", "Docker", "Power BI", "Tableau", "Postman", "Swagger", "Jest", "Sentry"],
+    "ml": ["TensorFlow", "Scikit-learn", "Pandas", "Deep Learning", "NLP"]
+  },
+  "experience": [
+    {
+      "company": "Worldwide Interactive Services",
+      "role": "React/React Native Software Developer",
+      "period": "August 2025 - Present",
+      "description": "Browser and App for a credit union bank",
+      "highlights": [
+        "Developed and maintained cross-platform banking platform with React, React Native, and Expo",
+        "Integrated RESTful APIs for account management and transactions",
+        "Implemented Sentry for error tracking and monitoring",
+        "Created dashboards and visual reports to track KPIs",
+        "Collaborated with cross-functional teams to deliver enhancements under tight deadlines"
+      ]
+    },
+    {
+      "company": "Capgemini Private Limited",
+      "role": "Software Analyst",
+      "period": "April 2022 - September 2023",
+      "description": "Apache Fineract Banking fraud detection mechanism",
+      "highlights": [
+        "Developed ML-based fraud detection system to flag suspicious transactions",
+        "Used Python, scikit-learn, pandas for data analysis and pattern detection",
+        "Integrated ML models via microservices architecture with Spring Boot",
+        "Enabled real-time fraud alerts using REST APIs",
+        "Supported multi-tenant deployment with configurable detection rules"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "PCUBE Project Portfolio Management",
+      "period": "June 2025 - Present",
+      "tech": ["React 18", "TypeScript", "Tailwind CSS", "PostgreSQL", "FastAPI", "Docker"],
+      "description": "Full-stack project portfolio management software with real-time sync",
+      "highlights": [
+        "Designed microservices architecture with Docker Compose and Nginx",
+        "Implemented JWT-based RBAC authentication",
+        "Built modules for timesheets, vendors, and analytics",
+        "Enabled real-time project tracking with custom APIs"
+      ]
+    },
+    {
+      "name": "Mobile Banking App with AI",
+      "period": "April 2025 - May 2025",
+      "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
+      "github": "Banking App",
+      "description": "Cross-platform mobile banking app with AI-powered features",
+      "highlights": [
+        "Built RESTful APIs with ML-based transaction tagging",
+        "Embedded AI chatbot for real-time financial advisory",
+        "Implemented analytics dashboards with category-based visualizations",
+        "Designed responsive UI with NativeWind and charts"
+      ]
+    },
+    {
+      "name": "Merchant Sales Improvement Tools",
+      "period": "January 2024 - Present",
+      "tech": ["React Native", "Expo.dev", "FastAPI", "Supabase"],
+      "github": "React Native Repo",
+      "description": "Sales and appointment management platform",
+      "highlights": [
+        "Implemented real-time slot booking and appointment management",
+        "Integrated Stripe payments and push notifications",
+        "Added multi-language support and coupon logic",
+        "Designed responsive UI for seamless cross-device experience"
+      ]
+    },
+    {
+      "name": "Pneumonia Detection Using Deep Learning",
+      "period": "October 2024 - December 2024",
+      "tech": ["Python", "TensorFlow", "VGG16", "Deep Learning"],
+      "description": "Medical image classification system",
+      "highlights": [
+        "Used VGG16 model for pneumonia classification from X-ray images",
+        "Applied data preprocessing and augmentation techniques",
+        "Improved accuracy through hyperparameter tuning",
+        "Evaluated performance using comprehensive metrics"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master's in Data Science and Analytics",
+      "school": "Florida Atlantic University",
+      "year": "May 2025",
+      "details": ["GPA: 3.63/4.0"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Platform",
+      "issuer": "Google",
+      "date": "February 2023",
+      "icon": "☁️"
+    },
+    {
+      "name": "AWS Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "October 2022",
+      "icon": "☁️"
+    }
+  ]
+}
