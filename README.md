@@ -9,15 +9,15 @@ The app fetches all content (profile, skills, projects, experience, education) f
 
 - **Frontend:** React, Vite, Tailwind CSS, Framer Motion
 - **Backend (Mock API):** JSON Server
-- **Language:** JavaScript + TypeScript support
+- **Language:** JavaScript (with a small TypeScript wrapper)
 - **Package Manager:** npm
 
 ---
 
 ## Prerequisites
 
-- **Node.js** v14+  
-- **npm** v6+
+- **Node.js** v18+ (recommended for Vite + ESM)
+- **npm** v8+
 
 Check your versions:
 
@@ -54,9 +54,7 @@ You need **two** processes running:
 1. JSON Server (serves `db.json`)
 2. Vite Dev Server (serves the React app)
 
-### Option 1 – Run in separate terminals (recommended)
-
-**Terminal 1 – Backend (JSON Server)**
+### 1. Start JSON Server
 
 From the project root:
 
@@ -69,9 +67,15 @@ This will:
 - Watch `db.json`
 - Serve it at `http://localhost:3001`
 
-**Terminal 2 – Frontend (Vite + React)**
+If this script fails, you can run JSON Server manually:
 
-In a second terminal, from the same folder:
+```bash
+npx json-server --watch db.json --port 3001
+```
+
+### 2. Start Vite Dev Server
+
+In a **second terminal**, from the same folder:
 
 ```bash
 npm run dev
@@ -85,34 +89,93 @@ The React app will call the JSON server to load your portfolio data.
 
 ---
 
-### Option 2 – Manually using `json-server` (if needed)
+## Tailwind CSS Setup (Current Project)
 
-If `npm run server` is not set up or fails, you can run:
+This project uses the **new Tailwind CSS API** via a single import in `src/index.css`:
 
-```bash
-npx json-server --watch db.json --port 3001
+```css
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  body {
+    @apply bg-slate-950 text-slate-100 overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-strong {
+    @apply bg-slate-900/60 backdrop-blur-2xl border-b border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400;
+  }
+}
 ```
 
-Then still use:
+> Note: Because the project’s `package.json` has `"type": "module"`, the PostCSS config is defined in **CommonJS** using a `.cjs` file:
 
-```bash
-npm run dev
+`postcss.config.cjs`:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
 ```
+
+If you ever see:
+
+> `Failed to load PostCSS config: module is not defined in ES module scope`
+
+make sure the file is named `postcss.config.cjs` (not `.js`).
 
 ---
 
 ## Project Structure
 
-Key files and folders:
+Important files and folders:
 
 - `src/Portfolio.jsx`  
   Main portfolio page that:
   - Uses `usePortfolioData` to fetch data from JSON Server
-  - Renders `Header`, `Hero`, `About`, `Experience`, `Projects`, `Skills`, `Education`, `Footer`
+  - Renders:
+    - `Header`
+    - `Hero`
+    - `About`
+    - `Experience`
+    - `Projects`
+    - `Skills`
+    - `Education`
+    - `Footer`
+
 - `src/App.tsx`  
-  Simple wrapper that renders `<Portfolio />`.
+  TypeScript wrapper that just renders `<Portfolio />`.
+
 - `src/hooks/usePortfolioData.ts`  
   Custom hook that calls the backend and returns `{ data, loading, error }`.
+
 - `src/components/`  
   - `Layout`
   - `Header`
@@ -123,15 +186,23 @@ Key files and folders:
   - `Skills`
   - `Education`
   - `Footer`
+  - `ProjectCard`, `ExperienceCard`, `SkillCard` (UI building blocks)
+
+- `src/index.css`  
+  Global styles + Tailwind import and custom utility classes.
+
 - `db.json`  
   Portfolio content (profile, stats, skills, experience, projects, education, certifications).
+
+- `vite.config.js`  
+  Vite configuration using `@vitejs/plugin-react` and `babel-plugin-react-compiler`.
 
 ---
 
 ## TypeScript Note (`Portfolio.jsx`)
 
-The project uses TypeScript for `App.tsx`, but your main component is in `Portfolio.jsx`.  
-To keep it as `.jsx` and avoid TypeScript errors, there is a type declaration:
+The app entry is in TypeScript (`App.tsx`), but the main portfolio page is a `.jsx` file (`Portfolio.jsx`).  
+To make this work smoothly, there is a small type declaration:
 
 - `src/Portfolio.d.ts`
 
@@ -143,7 +214,7 @@ declare module './Portfolio' {
 }
 ```
 
-`App.tsx` looks like:
+`App.tsx`:
 
 ```tsx
 import Portfolio from './Portfolio';
@@ -155,20 +226,23 @@ function App() {
 export default App;
 ```
 
-If you prefer full TypeScript support, you can later rename `Portfolio.jsx` to `Portfolio.tsx` and remove the `.d.ts` file.
+You can keep `Portfolio.jsx` as-is, or later convert it to `Portfolio.tsx` for full TypeScript support.
 
 ---
 
 ## Editing Content
 
-All portfolio content lives in `db.json`:
+All portfolio content is in `db.json`:
 
 - **Profile info:** name, title, bio, email, location, socials
 - **Stats:** years of experience, projects, certifications
-- **Skills:** languages, frameworks, databases, tools, ML
-- **Experience, Projects, Education, Certifications**
+- **Skills:** categories and items
+- **Experience**
+- **Projects**
+- **Education**
+- **Certifications**
 
-Update the JSON and refresh the page – no code changes needed.
+Update `db.json` and refresh the browser — no React code changes needed.
 
 ---
 
@@ -185,37 +259,33 @@ npm run server   # Start JSON Server (mock API)
 
 ---
 
-## Deployment
-
-For deployment (Vercel, Netlify, etc.):
-
-1. Build the app:
-
-```bash
-npm run build
-```
-
-2. Deploy the `dist` folder with your hosting provider.
-
-For production, you’ll either:
-- Deploy `db.json` behind a real backend, or
-- Replace API calls with static data.
-
----
-
 ## Troubleshooting
 
-- **`Something went wrong / Could not load portfolio data` on the page**  
-  - Make sure JSON Server is running:
+- **Blank page / “Something went wrong / Could not load portfolio data”**  
+  - Ensure JSON Server is running:
     ```bash
     npm run server
     ```
-- **TypeScript error: “Could not find a declaration file for module './Portfolio'”**  
-  - Ensure `src/Portfolio.d.ts` exists and is saved.
-- **`Failed to resolve import "framer-motion"`**  
+  - Check the browser console for network errors to `http://localhost:3001`.
+
+- **Tailwind classes not applying**  
+  - Confirm `src/index.css` is imported in your main entry file (e.g. `main.tsx`/`main.jsx`).
+  - Ensure `postcss.config.cjs` exists and Vite was restarted after changes:
+    ```bash
+    npm run dev
+    ```
+
+- **PostCSS / module error**  
+  - Rename `postcss.config.js` → `postcss.config.cjs`.
+
+- **Framer Motion not found**  
   - Install it:
     ```bash
     npm install framer-motion
     ```
+  - Import where used:
+    ```ts
+    import { motion } from 'framer-motion';
+    ```
 
-If you run into any specific errors, check the browser console and terminal logs.
+If you run into other specific errors, check both the **browser console** and the **Vite terminal output** for details.
