@@ -130,7 +130,7 @@
       "name": "Merchant Sales Improvement Tools",
       "period": "January 2024",
       "tech": ["React Native", "Expo.dev", "FastAPI", "Supabase"],
-      "github": "React Native Repo",
+      "github": "https://github.com/gd-rvemula/3book",
       "description": "Sales and appointment management platform",
       "highlights": [
         "Implemented real-time slot booking and appointment management",
