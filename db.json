@@ -16,7 +16,7 @@
     }
   },
   "stats": [
-    { "label": "Years Experience", "value": "3+" },
+    { "label": "Years Experience", "value": "2+" },
     { "label": "Projects Completed", "value": "10+" },
     { "label": "Cloud Certifications", "value": "2" }
   ],
@@ -56,6 +56,63 @@
     }
   ],
   "projects": [
+  {
+    "name": "HealthTrack Daily",
+    "period": "November 2025",
+    "tech": ["Swift", "SwiftUI", "iOS"],
+    "description": "Native iOS health tracking application for monitoring daily wellness metrics",
+    "highlights": [
+      "Built native iOS app with SwiftUI framework to track steps, mood, and sleep patterns",
+      "Implemented MVVM architecture with ObservableObject for clean state management",
+      "Designed intuitive TabView navigation with Today, History, and Log Entry screens",
+      "Created custom emoji-based mood selector and interactive sliders for data input",
+      "Developed persistent data storage for historical health entries and trend visualization"
+    ],
+    "github" : "https://github.com/LKONDETI/HeathTrackDaily"
+  },
+  {
+      "name": "Mobile Banking App with AI",
+      "period": "April 2025 - May 2025",
+      "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
+      "github": "https://github.com/LKONDETI/personal-finance-app",
+      "description": "Cross-platform mobile banking app with AI-powered features",
+      "highlights": [
+        "Built RESTful APIs with ML-based transaction tagging",
+        "Embedded AI chatbot for real-time financial advisory",
+        "Implemented analytics dashboards with category-based visualizations",
+        "Designed responsive UI with NativeWind and charts"
+      ]
+    },
+  {
+    "name": "Loan Management System",
+    "period": "January 2026 - Present",
+    "tech": ["React Native", "Expo", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Prisma ORM", "Docker"],
+    "description": "Full-stack mobile-first loan management platform with comprehensive application processing",
+    "highlights": [
+      "Engineered complete loan management system supporting Personal, Business, Auto, and Mortgage loans",
+      "Built secure authentication system with JWT tokens, bcrypt password hashing, and session management",
+      "Designed multi-step loan application form with tabbed navigation for details, personal info, income, and documents",
+      "Implemented RESTful API with FastAPI and PostgreSQL database using Prisma ORM for type-safe queries",
+      "Integrated automated E2E testing with Maestro for comprehensive UI testing coverage",
+      "Containerized application with Docker for consistent deployment across environments"
+    ],
+    "github" : "https://github.com/LKONDETI/loan-app"
+  },
+  {
+    "name": "HealthcarePlus Management Platform",
+    "period": "December 2025",
+    "tech": ["React Native", "Expo", "TypeScript", "ASP.NET Core", "C#", "PostgreSQL", "Docker"],
+    "description": "Full-stack healthcare management solution for patient appointments and health records",
+    "highlights": [
+      "Developed cross-platform healthcare app with Expo and React Native for iOS, Android, and web",
+      "Built RESTful API with ASP.NET Core for managing health conditions, appointments, and patient records",
+      "Implemented secure user authentication with profile management and role-based access control",
+      "Designed custom theming system with reusable UI components for consistent user experience",
+      "Deployed multi-container architecture using Docker Compose for frontend, backend, and PostgreSQL services",
+      "Created comprehensive appointment booking system with health record submission capabilities"
+    ],
+    "github" : "https://github.com/LKONDETI/heathcareplus-app"
+  },
     {
       "name": "PCUBE Project Portfolio Management",
       "period": "June 2025 - Present",
@@ -66,24 +123,12 @@
         "Implemented JWT-based RBAC authentication",
         "Built modules for timesheets, vendors, and analytics",
         "Enabled real-time project tracking with custom APIs"
-      ]
-    },
-    {
-      "name": "Mobile Banking App with AI",
-      "period": "April 2025 - May 2025",
-      "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
-      "github": "Banking App",
-      "description": "Cross-platform mobile banking app with AI-powered features",
-      "highlights": [
-        "Built RESTful APIs with ML-based transaction tagging",
-        "Embedded AI chatbot for real-time financial advisory",
-        "Implemented analytics dashboards with category-based visualizations",
-        "Designed responsive UI with NativeWind and charts"
-      ]
+      ],
+      "github": "https://github.com/LKONDETI"
     },
     {
       "name": "Merchant Sales Improvement Tools",
-      "period": "January 2024 - Present",
+      "period": "January 2024",
       "tech": ["React Native", "Expo.dev", "FastAPI", "Supabase"],
       "github": "React Native Repo",
       "description": "Sales and appointment management platform",
