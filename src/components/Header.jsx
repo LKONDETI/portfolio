@@ -22,9 +22,8 @@ export default function Header({ activeSection, scrollToSection }) {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass-strong py-4' : 'bg-transparent py-6'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass-strong py-4' : 'bg-transparent py-6'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo scrolls to hero */}
@@ -48,11 +47,10 @@ export default function Header({ activeSection, scrollToSection }) {
                     scrollToSection(item);
                   }
                 }}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeSection === item && item !== 'resume'
-                    ? 'text-white'
-                    : 'text-slate-400 hover:text-white'
-                }`}
+                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeSection === item && item !== 'resume'
+                  ? 'text-white'
+                  : 'text-slate-400 hover:text-white'
+                  }`}
               >
                 {activeSection === item && item !== 'resume' && (
                   <motion.div
@@ -96,9 +94,8 @@ export default function Header({ activeSection, scrollToSection }) {
                       }
                       setMobileMenuOpen(false);
                     }}
-                    className={`text-lg font-medium text-left ${
-                      activeSection === item ? 'text-cyan-400' : 'text-slate-400'
-                    }`}
+                    className={`text-lg font-medium text-left ${activeSection === item ? 'text-cyan-400' : 'text-slate-400'
+                      }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
@@ -135,7 +132,7 @@ export default function Header({ activeSection, scrollToSection }) {
 
               {/* PDF in public/resume.pdf */}
               <iframe
-                src="/resume.pdf"
+                src={`${import.meta.env.BASE_URL}resume.pdf`}
                 title="Resume"
                 className="w-full h-full"
               />
