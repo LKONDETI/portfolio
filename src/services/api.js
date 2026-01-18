@@ -1,51 +1,49 @@
-import axios from 'axios';
+import data from '../data/db.json';
 
-const API_URL = 'http://localhost:3000';
+// Simulating async behavior to keep the interface consistent
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const getProfile = async () => {
-    const response = await axios.get(`${API_URL}/profile`);
-    return response.data;
+    // await delay(100); // Optional: simulate network delay
+    return data.profile;
 };
 
 export const getSkills = async () => {
-    const response = await axios.get(`${API_URL}/skills`);
-    return response.data;
+    return data.skills;
 };
 
 export const getExperience = async () => {
-    const response = await axios.get(`${API_URL}/experience`);
-    return response.data;
+    return data.experience;
 };
 
 export const getProjects = async () => {
-    const response = await axios.get(`${API_URL}/projects`);
-    return response.data;
+    return data.projects;
 };
 
 export const getEducation = async () => {
-    const response = await axios.get(`${API_URL}/education`);
-    return response.data;
+    return data.education;
 };
 
 export const getCertifications = async () => {
-    const response = await axios.get(`${API_URL}/certifications`);
-    return response.data;
+    return data.certifications;
 };
 
 export const getStats = async () => {
-    const response = await axios.get(`${API_URL}/stats`);
-    return response.data;
+    return data.stats;
 };
 
 export const getAllData = async () => {
-    const [profile, stats, skills, experience, projects, education, certifications] = await Promise.all([
-        getProfile(),
-        getStats(),
-        getSkills(),
-        getExperience(),
-        getProjects(),
-        getEducation(),
-        getCertifications()
-    ]);
-    return { profile, stats, skills, experience, projects, education, certifications };
+    // Since we have all data locally, we can just return it directly
+    // but we'll keep the Promise.all structure if you want to perform independent "fetches"
+    // or just return the object directly wrapped in a promise.
+
+    return {
+        profile: data.profile,
+        stats: data.stats,
+        skills: data.skills,
+        experience: data.experience,
+        projects: data.projects,
+        education: data.education,
+        certifications: data.certifications
+    };
 };
