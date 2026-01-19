@@ -87,12 +87,14 @@ export default function Header({ activeSection, scrollToSection }) {
                   <button
                     key={item}
                     onClick={() => {
-                      if (item === 'resume') {
-                        setShowResume(true);
-                      } else {
-                        scrollToSection(item);
-                      }
                       setMobileMenuOpen(false);
+                      setTimeout(() => {
+                        if (item === 'resume') {
+                          setShowResume(true);
+                        } else {
+                          scrollToSection(item);
+                        }
+                      }, 100);
                     }}
                     className={`text-lg font-medium text-left ${activeSection === item ? 'text-cyan-400' : 'text-slate-400'
                       }`}
