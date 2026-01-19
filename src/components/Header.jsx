@@ -145,7 +145,7 @@ export default function Header({ activeSection, scrollToSection, theme, toggleTh
 
               {/* PDF in public/resume.pdf */}
               <iframe
-                src={`${import.meta.env.BASE_URL} resume.pdf`}
+                src={`${import.meta.env.BASE_URL}resume.pdf`}
                 title="Resume"
                 className="w-full h-full"
               />
