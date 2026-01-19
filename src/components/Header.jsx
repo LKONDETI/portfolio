@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
-export default function Header({ activeSection, scrollToSection }) {
+export default function Header({ activeSection, scrollToSection, theme, toggleTheme }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showResume, setShowResume] = useState(false);
@@ -35,42 +35,53 @@ export default function Header({ activeSection, scrollToSection }) {
             LSK
           </motion.div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex gap-1">
-            {navItems.map((item) => (
-              <button
-                key={item}
-                onClick={() => {
-                  if (item === 'resume') {
-                    setShowResume(true);
-                  } else {
-                    scrollToSection(item);
-                  }
-                }}
-                className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeSection === item && item !== 'resume'
-                  ? 'text-white'
-                  : 'text-slate-400 hover:text-white'
-                  }`}
-              >
-                {activeSection === item && item !== 'resume' && (
-                  <motion.div
-                    layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/10 rounded-full -z-10"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </button>
-            ))}
-          </div>
+          <div className="flex items-center gap-6">
+            {/* Desktop Nav */}
+            <div className="hidden md:flex gap-1">
+              {navItems.map((item) => (
+                <button
+                  key={item}
+                  onClick={() => {
+                    if (item === 'resume') {
+                      setShowResume(true);
+                    } else {
+                      scrollToSection(item);
+                    }
+                  }}
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors ${activeSection === item && item !== 'resume'
+                    ? 'text-[var(--text-primary)]'
+                    : 'text-[var(--text-tertiary)] hover:text-[var(--text-primary)]'
+                    } `}
+                >
+                  {activeSection === item && item !== 'resume' && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-[var(--glass-border)] rounded-full -z-10"
+                      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </button>
+              ))}
+            </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-slate-300 hover:text-white"
-            onClick={() => setMobileMenuOpen((open) => !open)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-cyan-400"
+              aria-label="Toggle Theme"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-slate-400 hover:text-white"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Nav */}
@@ -80,7 +91,7 @@ export default function Header({ activeSection, scrollToSection }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-slate-950/95 border-b border-white/10 overflow-hidden"
+              className="md:hidden glass-strong border-b border-white/10 overflow-hidden"
             >
               <div className="px-6 py-8 flex flex-col gap-4">
                 {navItems.map((item) => (
@@ -96,7 +107,7 @@ export default function Header({ activeSection, scrollToSection }) {
                         }
                       }, 100);
                     }}
-                    className={`text-lg font-medium text-left ${activeSection === item ? 'text-cyan-400' : 'text-slate-400'
+                    className={`text-lg font-medium text-left ${activeSection === item ? 'text-cyan-400' : 'text-[var(--text-tertiary)]'
                       }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}
@@ -134,7 +145,7 @@ export default function Header({ activeSection, scrollToSection }) {
 
               {/* PDF in public/resume.pdf */}
               <iframe
-                src={`${import.meta.env.BASE_URL}resume.pdf`}
+                src={`${import.meta.env.BASE_URL} resume.pdf`}
                 title="Resume"
                 className="w-full h-full"
               />

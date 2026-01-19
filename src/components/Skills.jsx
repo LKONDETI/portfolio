@@ -21,9 +21,10 @@ export default function Skills({ skills }) {
                     viewport={{ once: true }}
                     className="flex items-center gap-4 mb-8"
                 >
-                    <Wrench size={48} className="text-slate-100" />
+                    <Wrench size={48} className="text-[var(--text-primary)]" />
                     <h2 className="text-4xl md:text-5xl font-bold">Skills & Technologies</h2>
                 </motion.div>
+
 
                 <div className="grid md:grid-cols-2 gap-8">
                     {categories.map((cat, idx) => (
@@ -45,7 +46,7 @@ export default function Skills({ skills }) {
                                     <motion.span
                                         key={i}
                                         whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.1)" }}
-                                        className={`px-4 py-2 ${cat.bg} text-slate-200 rounded-xl font-medium cursor-default border ${cat.border} text-sm`}
+                                        className={`px-4 py-2 ${cat.bg} text-[var(--text-secondary)] rounded-xl font-medium cursor-default border ${cat.border} text-sm`}
                                     >
                                         {skill}
                                     </motion.span>

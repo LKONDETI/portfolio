@@ -38,17 +38,17 @@ export default function Experience({ experience }) {
                                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                                     <div className="flex-1">
                                         <h3 className="text-2xl md:text-3xl font-bold text-cyan-300 mb-2">{job.role}</h3>
-                                        <p className="text-xl text-slate-200 font-medium mb-1">{job.company}</p>
-                                        <p className="text-base text-slate-400 italic">{job.description}</p>
+                                        <p className="text-xl text-[var(--text-secondary)] font-medium mb-1">{job.company}</p>
+                                        <p className="text-base text-[var(--text-tertiary)] italic">{job.description}</p>
                                     </div>
-                                    <div className="mt-4 lg:mt-0 flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full border border-white/10 text-slate-300 text-sm">
+                                    <div className="mt-4 lg:mt-0 flex items-center gap-2 px-4 py-2 bg-[var(--glass-strong-bg)] rounded-full border border-[var(--glass-border)] text-[var(--text-tertiary)] text-sm">
                                         <Calendar size={16} />
                                         <span className="whitespace-nowrap">{job.period}</span>
                                     </div>
                                 </div>
                                 <ul className="space-y-4">
                                     {job.highlights.map((highlight, i) => (
-                                        <li key={i} className="flex gap-4 text-slate-300 text-lg group-hover:text-slate-100 transition-colors">
+                                        <li key={i} className="flex gap-4 text-[var(--text-secondary)] text-lg group-hover:text-[var(--text-primary)] transition-colors">
                                             <ChevronRight className="text-cyan-500 shrink-0 mt-1" size={20} />
                                             <span className="leading-relaxed">{highlight}</span>
                                         </li>

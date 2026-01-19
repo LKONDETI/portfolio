@@ -31,7 +31,7 @@ export default function Hero({ profile }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.4 }}
-                    className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+                    className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed"
                 >
                     {profile.bio_short}
                 </motion.p>
@@ -40,7 +40,7 @@ export default function Hero({ profile }) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-wrap justify-center gap-6 text-slate-300 text-lg"
+                    className="flex flex-wrap justify-center gap-6 text-[var(--text-secondary)] text-lg"
                 >
                     <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-cyan-400 transition-all hover:scale-105">
                         <Mail size={20} />
@@ -79,7 +79,7 @@ export default function Hero({ profile }) {
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute bottom-10"
             >
-                <ArrowDown size={32} className="text-slate-500" />
+                <ArrowDown size={32} className="text-[var(--text-tertiary)]" />
             </motion.div>
         </section>
     );

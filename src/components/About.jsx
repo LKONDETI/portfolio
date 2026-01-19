@@ -28,7 +28,7 @@ export default function About({ profile, stats }) {
                         className="md:col-span-2 glass rounded-3xl p-8 md:p-10 space-y-6"
                     >
                         {profile.bio_long.map((paragraph, index) => (
-                            <p key={index} className="text-lg md:text-xl text-slate-300 leading-relaxed font-light">
+                            <p key={index} className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
                                 {paragraph}
                             </p>
                         ))}
@@ -52,7 +52,7 @@ export default function About({ profile, stats }) {
                                 <div className={`text-5xl md:text-6xl font-bold mb-2 font-display text-gradient`}>
                                     {stat.value}
                                 </div>
-                                <div className="text-slate-400 text-lg">{stat.label}</div>
+                                <div className="text-[var(--text-tertiary)] text-lg">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>

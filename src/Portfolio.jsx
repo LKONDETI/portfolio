@@ -13,6 +13,18 @@ import Footer from './components/Footer';
 export default function Portfolio() {
   const { data, loading, error } = usePortfolioData();
   const [activeSection, setActiveSection] = useState('about');
+  const [theme, setTheme] = useState('dark');
+
+  // Apply theme to html element
+  React.useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
@@ -44,7 +56,12 @@ export default function Portfolio() {
 
   return (
     <Layout>
-      <Header activeSection={activeSection} scrollToSection={scrollToSection} />
+      <Header
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <Hero profile={data.profile} />
       <About profile={data.profile} stats={data.stats} />
       <Experience experience={data.experience} />

@@ -32,9 +32,9 @@ export default function Education({ education, certifications }) {
                                 <GraduationCap size={40} />
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-3xl font-bold text-slate-100 mb-2">{edu.degree}</h3>
+                                <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-2">{edu.degree}</h3>
                                 <p className="text-2xl text-cyan-400 font-light mb-4">{edu.school}</p>
-                                <div className="flex flex-wrap gap-4 text-slate-400">
+                                <div className="flex flex-wrap gap-4 text-[var(--text-tertiary)]">
                                     <span className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg border border-white/10">
                                         <Calendar size={16} />
                                         Graduated: {edu.year}
@@ -81,11 +81,11 @@ export default function Education({ education, certifications }) {
                                         <Award size={28} />
                                     </div>
                                     <div>
-                                        <h4 className="text-xl font-bold text-slate-100">{cert.name}</h4>
-                                        <p className="text-slate-400">{cert.issuer}</p>
+                                        <h4 className="text-xl font-bold text-[var(--text-primary)]">{cert.name}</h4>
+                                        <p className="text-[var(--text-tertiary)]">{cert.issuer}</p>
                                     </div>
                                 </div>
-                                <p className="text-slate-500 text-sm flex items-center gap-2">
+                                <p className="text-[var(--text-tertiary)] text-sm flex items-center gap-2">
                                     <Calendar size={14} />
                                     Issued: {cert.date}
                                 </p>
