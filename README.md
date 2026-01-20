@@ -1,25 +1,28 @@
 # Portfolio Website
 
-A dynamic, responsive portfolio website built with **React**, **Vite**, and **Tailwind CSS**.  
-The app fetches all content (profile, skills, projects, experience, education) from a local **JSON Server** (`db.json`), so you can update your portfolio without touching the React code.
+A dynamic, responsive portfolio website built with **React**, **Vite**, and **Tailwind CSS**.
+
+All content (profile, skills, projects, experience, education, certifications) comes from a local **JSON Server** (`db.json`), so you can update your portfolio data without touching the React components. The header includes a **Resume** tab that opens your resume PDF in a modal.
 
 ---
 
 ## Tech Stack
 
-- **Frontend:** React, Vite, Tailwind CSS, Framer Motion
-- **Backend (Mock API):** JSON Server
-- **Language:** JavaScript (with a small TypeScript wrapper)
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion, Lucide Icons, React Icons
+- **Backend (Mock API):** JSON Server (serving `db.json`)
+- **Language:** JavaScript
 - **Package Manager:** npm
+- **Dev tooling:** ESLint, Tailwind v4 (@import API), Vite React plugin
+- **Deployment:** GitHub Pages (`gh-pages` branch, static build from `dist/`)
 
 ---
 
 ## Prerequisites
 
-- **Node.js** v18+ (recommended for Vite + ESM)
+- **Node.js** v18+
 - **npm** v8+
 
-Check your versions:
+Check versions:
 
 ```bash
 node -v
@@ -30,68 +33,70 @@ npm -v
 
 ## Installation
 
-1. Clone the repository:
+Clone and install:
 
 ```bash
 git clone <repository-url>
 cd sravani-portfolio
-```
-
-2. Install dependencies:
-
-```bash
 npm install
 ```
 
-This installs React, Vite, Tailwind CSS, Framer Motion, JSON Server, and other required packages.
+This installs React, Vite, Tailwind CSS, Framer Motion, JSON Server, Lucide Icons, etc.
 
 ---
 
-## Running the Application
+## Running the Application (Local Development)
 
-You need **two** processes running:
+The app expects a JSON API and the Vite dev server running together.
 
-1. JSON Server (serves `db.json`)
-2. Vite Dev Server (serves the React app)
+You have two options:
 
-### 1. Start JSON Server
+### Option A – One command (`npm start`)
 
-From the project root:
+First, ensure `concurrently` is installed:
+
+```bash
+npm install --save-dev concurrently
+```
+
+Then use:
+
+```bash
+npm start
+```
+
+This runs:
+
+- `npm run server` → JSON Server on **http://localhost:3000**
+- `npm run dev` → Vite dev server on **http://localhost:5173**
+
+### Option B – Two terminals
+
+**Terminal 1 – JSON Server**
 
 ```bash
 npm run server
+# json-server --watch db.json --port 3000
+# Endpoints like:
+# http://localhost:3000/profile
+# http://localhost:3000/skills
+# http://localhost:3000/projects
 ```
 
-This will:
-
-- Watch `db.json`
-- Serve it at `http://localhost:3001`
-
-If this script fails, you can run JSON Server manually:
-
-```bash
-npx json-server --watch db.json --port 3001
-```
-
-### 2. Start Vite Dev Server
-
-In a **second terminal**, from the same folder:
+**Terminal 2 – Vite Dev Server**
 
 ```bash
 npm run dev
+# → http://localhost:5173
 ```
 
-Open the URL shown in the terminal (usually):
-
-- `http://localhost:5173`
-
-The React app will call the JSON server to load your portfolio data.
+The React app will fetch data from `http://localhost:3000`.
 
 ---
 
-## Tailwind CSS Setup (Current Project)
+## Tailwind CSS Setup
 
-This project uses the **new Tailwind CSS API** via a single import in `src/index.css`:
+This project uses **Tailwind CSS v4** via the new @import API in `src/index.css`:
 
 ```css
 @import "tailwindcss";
@@ -132,11 +137,10 @@ This project uses the **new Tailwind CSS API** via a single import in `src/index
 }
 ```
 
-> Note: Because the project’s `package.json` has `"type": "module"`, the PostCSS config is defined in **CommonJS** using a `.cjs` file:
-
-`postcss.config.cjs`:
+Because `package.json` has `"type": "module"`, PostCSS config is written in CommonJS and stored as `postcss.config.cjs`:
 
 ```js
+// postcss.config.cjs
 module.exports = {
   plugins: {
     tailwindcss: {},
@@ -145,22 +149,34 @@ module.exports = {
 };
 ```
 
-If you ever see:
+If you see:
 
-> `Failed to load PostCSS config: module is not defined in ES module scope`
+> Failed to load PostCSS config: module is not defined in ES module scope
 
-make sure the file is named `postcss.config.cjs` (not `.js`).
+ensure the file is named `postcss.config.cjs`, not `postcss.config.js`.
 
 ---
 
-## Project Structure
+## Project Structure (Key Files)
 
-Important files and folders:
+- `db.json`  
+  JSON Server data source for:
+  - `/profile`
+  - `/stats`
+  - `/skills`
+  - `/experience`
+  - `/projects`
+  - `/education`
+  - `/certifications`
+
+- `src/main.jsx`  
+  Vite React entry that mounts the app and imports `index.css`.
 
 - `src/Portfolio.jsx`  
-  Main portfolio page that:
+  Main portfolio page:
   - Uses `usePortfolioData` to fetch data from JSON Server
   - Renders:
+    - `Layout`
     - `Header`
     - `Hero`
     - `About`
@@ -170,122 +186,166 @@ Important files and folders:
     - `Education`
     - `Footer`
 
-- `src/App.tsx`  
-  TypeScript wrapper that just renders `<Portfolio />`.
+- `src/hooks/usePortfolioData.js`  
+  Custom hook that calls the API (via `src/services/api.js`) and returns `{ data, loading, error }`.
 
-- `src/hooks/usePortfolioData.ts`  
-  Custom hook that calls the backend and returns `{ data, loading, error }`.
+- `src/services/api.js`  
+  Axios-based API client that points to the JSON Server.
 
 - `src/components/`  
-  - `Layout`
-  - `Header`
-  - `Hero`
-  - `About`
-  - `Experience`
-  - `Projects`
-  - `Skills`
-  - `Education`
-  - `Footer`
-  - `ProjectCard`, `ExperienceCard`, `SkillCard` (UI building blocks)
+  - `Layout.jsx` – page shell
+  - `Header.jsx` – sticky nav with active section and **Resume** modal
+  - `Hero.jsx` – top intro section
+  - `About.jsx` – bio and stats
+  - `Experience.jsx` – experience timeline/cards
+  - `Projects.jsx` – project grid using `ProjectCard`
+  - `Skills.jsx` – skills grid using `SkillCard`
+  - `Education.jsx` – education and certifications
+  - `Footer.jsx` – contact and social links
 
-- `src/index.css`  
-  Global styles + Tailwind import and custom utility classes.
-
-- `db.json`  
-  Portfolio content (profile, stats, skills, experience, projects, education, certifications).
+- `public/resume.pdf`  
+  Your resume file, shown in a modal via an `<iframe>` in `Header`.
 
 - `vite.config.js`  
-  Vite configuration using `@vitejs/plugin-react` and `babel-plugin-react-compiler`.
+  Vite config with `@vitejs/plugin-react` and `babel-plugin-react-compiler`, plus a `base` path configured for GitHub Pages hosting.
 
 ---
 
-## TypeScript Note (`Portfolio.jsx`)
+## Resume Modal
 
-The app entry is in TypeScript (`App.tsx`), but the main portfolio page is a `.jsx` file (`Portfolio.jsx`).  
-To make this work smoothly, there is a small type declaration:
+The **Resume** nav item in `Header` opens a modal with your PDF:
 
-- `src/Portfolio.d.ts`
+- `public/resume.pdf` is served at `/resume.pdf`.
+- `Header.jsx` uses Framer Motion’s `AnimatePresence` for the modal.
+- The modal embeds the PDF:
 
-```ts
-declare module './Portfolio' {
-  import * as React from 'react';
-  const component: React.FC;
-  export default component;
+```jsx
+<iframe
+  src="/resume.pdf"
+  title="Resume"
+  className="w-full h-full"
+/>
+```
+
+To update your resume, replace `public/resume.pdf` with a new file of the same name.
+
+---
+
+## Editing Content (db.json)
+
+All dynamic content lives in `db.json`:
+
+- `profile` – name, title, bio, email, location, socials
+- `stats` – experience, projects, certifications
+- `skills` – categories and items
+- `experience` – roles, companies, dates, descriptions
+- `projects` – title, stack, description, links
+- `education`
+- `certifications`
+
+Update `db.json` and reload the page; the app will reflect the new data.
+
+---
+
+## npm Scripts
+
+From `package.json`:
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "server": "json-server --watch db.json --port 3000",
+  "start": "concurrently \"npm run server\" \"npm run dev\""
 }
 ```
 
-`App.tsx`:
+Use:
 
-```tsx
-import Portfolio from './Portfolio';
-
-function App() {
-  return <Portfolio />;
-}
-
-export default App;
-```
-
-You can keep `Portfolio.jsx` as-is, or later convert it to `Portfolio.tsx` for full TypeScript support.
+- `npm start` – run JSON Server + Vite together (after installing `concurrently`).
+- `npm run dev` – Vite dev server only.
+- `npm run server` – JSON Server only.
+- `npm run build` – build for production into `dist/`.
+- `npm run preview` – preview the production build locally.
 
 ---
 
-## Editing Content
+## Deployment (GitHub Pages)
 
-All portfolio content is in `db.json`:
+Deployment is handled via the `gh-pages` branch, which contains only the built static files (from `dist/`).
 
-- **Profile info:** name, title, bio, email, location, socials
-- **Stats:** years of experience, projects, certifications
-- **Skills:** categories and items
-- **Experience**
-- **Projects**
-- **Education**
-- **Certifications**
-
-Update `db.json` and refresh the browser — no React code changes needed.
-
----
-
-## Scripts
-
-Common npm scripts:
+Typical deploy steps:
 
 ```bash
-npm run dev      # Start Vite dev server
-npm run build    # Build for production
-npm run preview  # Preview production build
-npm run server   # Start JSON Server (mock API)
+# On main with latest code
+git checkout main
+git pull origin main
+
+# Build
+npm run build
+
+# Switch to gh-pages
+git checkout gh-pages
+
+# Replace contents with dist build
+git rm -rf .
+cp -R dist/* .
+git add .
+git commit -m "Deploy new portfolio build"
+git push origin gh-pages
+
+# Go back to main for development
+git checkout main
 ```
+
+In GitHub:
+
+- Settings → Pages
+- Source: `Deploy from a branch`
+- Branch: `gh-pages`, folder: `/root`
+
+After pushing, wait a minute and hard-refresh your Pages URL.
 
 ---
 
 ## Troubleshooting
 
-- **Blank page / “Something went wrong / Could not load portfolio data”**  
+- **Blank page / “Something went wrong / Could not load portfolio data” (local)**  
   - Ensure JSON Server is running:
     ```bash
     npm run server
     ```
-  - Check the browser console for network errors to `http://localhost:3001`.
+  - Confirm the app is requesting `http://localhost:3000/...`.
+  - Check browser console and Network tab.
 
-- **Tailwind classes not applying**  
-  - Confirm `src/index.css` is imported in your main entry file (e.g. `main.tsx`/`main.jsx`).
-  - Ensure `postcss.config.cjs` exists and Vite was restarted after changes:
+- **Tailwind styles not applying**  
+  - Ensure `src/index.css` is imported in `src/main.jsx`.
+  - Ensure `postcss.config.cjs` exists.
+  - Restart dev server:
     ```bash
     npm run dev
     ```
 
 - **PostCSS / module error**  
-  - Rename `postcss.config.js` → `postcss.config.cjs`.
+  - Use `postcss.config.cjs` (CommonJS), not `postcss.config.js`.
 
-- **Framer Motion not found**  
+- **`concurrently: command not found` when running `npm start`**  
   - Install it:
     ```bash
-    npm install framer-motion
-    ```
-  - Import where used:
-    ```ts
-    import { motion } from 'framer-motion';
+    npm install --save-dev concurrently
     ```
 
-If you run into other specific errors, check both the **browser console** and the **Vite terminal output** for details.
+- **Framer Motion or lucide-react errors**  
+  - Install:
+    ```bash
+    npm install framer-motion lucide-react
+    ```
+  - Import correctly:
+    ```js
+    import { motion, AnimatePresence } from 'framer-motion';
+    import { Linkedin, Github, Mail, Heart } from 'lucide-react';
+    ```
+
+For any other issue, check both the **browser console** and the **Vite dev server** output in the terminal.
