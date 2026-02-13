@@ -37,7 +37,6 @@ Clone and install:
 
 ```bash
 git clone <repository-url>
-cd sravani-portfolio
 npm install
 ```
 
