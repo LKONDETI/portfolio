@@ -71,8 +71,21 @@
     "github" : "https://github.com/LKONDETI/HeathTrackDaily"
   },
   {
+  "name": "Autonomous Application Agent with LLM",
+  "period": "January 2026 - February 2026",
+  "tech": ["Python", "LangGraph", "LangChain", "FastAPI", "React", "Playwright", "SQLite", "TailwindCSS"],
+  "github": "https://github.com/LKONDETI/apply_agent",
+  "description": "AI-powered autonomous agent that automates job applications with human-in-the-loop workflow",
+  "highlights": [
+    "Built state machine orchestration with LangGraph for multi-step job application workflow",
+    "Integrated LLM-based resume parsing, job fit analysis, and document tailoring",
+    "Automated browser interactions with Playwright for form submission",
+    "Designed React dashboard with FastAPI backend for application tracking and approval"
+  ]
+},
+  {
       "name": "Mobile Banking App with AI",
-      "period": "April 2025 - May 2025",
+      "period": "April 2025",
       "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
       "github": "https://github.com/LKONDETI/personal-finance-app",
       "description": "Cross-platform mobile banking app with AI-powered features",
