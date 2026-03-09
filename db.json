@@ -75,30 +75,31 @@
   "period": "January 2026 - February 2026",
   "tech": ["Python", "LangGraph", "LangChain", "FastAPI", "React", "Playwright", "SQLite", "TailwindCSS"],
   "github": "https://github.com/LKONDETI/apply_agent",
-  "description": "AI-powered autonomous agent that automates job applications with human-in-the-loop workflow",
+  "description": "AI-powered autonomous agent that automates end-to-end job applications with a human-in-the-loop approval workflow",
   "highlights": [
-    "Built state machine orchestration with LangGraph for multi-step job application workflow",
-    "Integrated LLM-based resume parsing, job fit analysis, and document tailoring",
-    "Automated browser interactions with Playwright for form submission",
-    "Designed React dashboard with FastAPI backend for application tracking and approval"
+    "Built state machine orchestration with LangGraph for a multi-step job application pipeline (ingestion → search → analysis → tailoring → submission)",
+    "Integrated LLM-based resume parsing, job fit scoring, and role-specific cover letter and resume tailoring using LangChain with OpenAI/Perplexity",
+    "Automated browser interactions with Playwright for Chromium-based form navigation and job application submission",
+    "Designed React dashboard with FastAPI backend for real-time application tracking, pending approval queue, and submission history via SQLite"
   ]
 },
   {
-      "name": "Mobile Banking App with AI",
-      "period": "April 2025",
-      "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
-      "github": "https://github.com/LKONDETI/personal-finance-app",
-      "description": "Cross-platform mobile banking app with AI-powered features",
-      "highlights": [
-        "Built RESTful APIs with ML-based transaction tagging",
-        "Embedded AI chatbot for real-time financial advisory",
-        "Implemented analytics dashboards with category-based visualizations",
-        "Designed responsive UI with NativeWind and charts"
-      ]
-    },
+  "name": "Mobile Banking App with AI Chatbot",
+  "period": "February 2026 - Present",
+  "tech": ["React Native", "Expo SDK 54", "NativeWind", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Docker"],
+  "github": "https://github.com/LKONDETI/personal-finance-app",
+  "description": "Cross-platform mobile banking app with AI-powered financial advisory, budget tracking, and secure account management",
+  "highlights": [
+    "Built RESTful APIs with .NET 9.0 covering auth, accounts, transactions, budgets, loans, and payment requests",
+    "Embedded AI chatbot for real-time financial advisory and support",
+    "Implemented analytics dashboards with interactive pie charts and category-based budget visualizations",
+    "Designed responsive mobile UI with NativeWind, Expo Router, and React Native SVG charts",
+    "Containerized backend with Docker and PostgreSQL; JWT auth with secure token storage via Expo SecureStore"
+  ]
+},
   {
     "name": "Loan Management System",
-    "period": "January 2026 - Present",
+    "period": "January 2026 - February 2026",
     "tech": ["React Native", "Expo", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Prisma ORM", "Docker"],
     "description": "Full-stack mobile-first loan management platform with comprehensive application processing",
     "highlights": [
