@@ -56,20 +56,20 @@
     }
   ],
   "projects": [
-  {
-    "name": "HealthTrack Daily",
-    "period": "November 2025",
-    "tech": ["Swift", "SwiftUI", "iOS"],
-    "description": "Native iOS health tracking application for monitoring daily wellness metrics",
-    "highlights": [
-      "Built native iOS app with SwiftUI framework to track steps, mood, and sleep patterns",
-      "Implemented MVVM architecture with ObservableObject for clean state management",
-      "Designed intuitive TabView navigation with Today, History, and Log Entry screens",
-      "Created custom emoji-based mood selector and interactive sliders for data input",
-      "Developed persistent data storage for historical health entries and trend visualization"
-    ],
-    "github" : "https://github.com/LKONDETI/HeathTrackDaily"
-  },
+    {
+  "name": "Mobile Banking App with AI Chatbot",
+  "period": "February 2026 - Present",
+  "tech": ["React Native", "Expo SDK 54", "NativeWind", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Docker", "JWT", "BCrypt"],
+  "github": "https://github.com/LKONDETI/personal-finance-app",
+  "description": "Cross-platform mobile banking app with AI-powered financial advisory, budget tracking, secure account management, and privacy-first design.",
+  "highlights": [
+    "Built a robust RESTful API with .NET 9.0, Entity Framework Core, and PostgreSQL to handle authentication, accounts, transactions, budget limits, loans, and bill payment requests.",
+    "Engineered advanced security and user-experience features, including BCrypt password hashing, a global 'Privacy Mode' to mask sensitive balances, and JWT token management via Expo SecureStore.",
+    "Embedded an AI chatbot for real-time financial advisory and budget-tracking insights.",
+    "Developed complex business logic including an 'upsert' system for dynamic budget limits, and soft-delete/withdraw capabilities for pending loan applications.",
+    "Designed a responsive and modern mobile UI using NativeWind and Expo Router, featuring interactive pie charts, sparklines, and category-based progress indicators."
+  ]
+},
   {
   "name": "Autonomous Application Agent with LLM",
   "period": "January 2026 - February 2026",
@@ -83,20 +83,20 @@
     "Designed React dashboard with FastAPI backend for real-time application tracking, pending approval queue, and submission history via SQLite"
   ]
 },
-  {
-  "name": "Mobile Banking App with AI Chatbot",
-  "period": "February 2026 - Present",
-  "tech": ["React Native", "Expo SDK 54", "NativeWind", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Docker"],
-  "github": "https://github.com/LKONDETI/personal-finance-app",
-  "description": "Cross-platform mobile banking app with AI-powered financial advisory, budget tracking, and secure account management",
-  "highlights": [
-    "Built RESTful APIs with .NET 9.0 covering auth, accounts, transactions, budgets, loans, and payment requests",
-    "Embedded AI chatbot for real-time financial advisory and support",
-    "Implemented analytics dashboards with interactive pie charts and category-based budget visualizations",
-    "Designed responsive mobile UI with NativeWind, Expo Router, and React Native SVG charts",
-    "Containerized backend with Docker and PostgreSQL; JWT auth with secure token storage via Expo SecureStore"
-  ]
-},
+{
+    "name": "HealthTrack Daily",
+    "period": "November 2025",
+    "tech": ["Swift", "SwiftUI", "iOS"],
+    "description": "Native iOS health tracking application for monitoring daily wellness metrics",
+    "highlights": [
+      "Built native iOS app with SwiftUI framework to track steps, mood, and sleep patterns",
+      "Implemented MVVM architecture with ObservableObject for clean state management",
+      "Designed intuitive TabView navigation with Today, History, and Log Entry screens",
+      "Created custom emoji-based mood selector and interactive sliders for data input",
+      "Developed persistent data storage for historical health entries and trend visualization"
+    ],
+    "github" : "https://github.com/LKONDETI/HeathTrackDaily"
+  },
   {
     "name": "Loan Management System",
     "period": "January 2026 - February 2026",
