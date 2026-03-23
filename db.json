@@ -32,7 +32,7 @@
       "company": "Worldwide Interactive Services",
       "role": "React/React Native Software Developer",
       "period": "August 2025 - Present",
-      "description": "Browser and App for a credit union bank",
+      "description": "Milly-OLB Browser Platform & Milly-App Mobile Banking Application",
       "highlights": [
         "Developed and maintained cross-platform banking platform with React, React Native, and Expo",
         "Integrated RESTful APIs for account management and transactions",
@@ -40,6 +40,25 @@
         "Created dashboards and visual reports to track KPIs",
         "Collaborated with cross-functional teams to deliver enhancements under tight deadlines"
       ]
+    },
+    {
+      "company": "Worldwide Interactive Services",
+      "role": "React/React Native Software Developer",
+      "period": "January 2026 - Present",
+      "description": "FivePointsCoBRIS App for social workers",
+      "highlights": [
+    "Developed and maintained a cross-platform child welfare case management mobile application (CoBRIS/Clover) using React Native, Expo, and TypeScript, targeting Android, iOS, and Web from a single codebase.",
+    "Integrated RESTful APIs for authentication, caseload management, case facesheets, and child facesheet data, including JWT token handling with access/refresh token lifecycle management.",
+    "Implemented secure token storage using expo-secure-store and AsyncStorage, with silent token refresh and biometric re-authentication (Face ID, Fingerprint, Device PIN) via expo-local-authentication.",
+    "Built an offline-first architecture with an offline queue system (SecureStore-backed) that automatically detects network connectivity via @react-native-community/netinfo and flushes queued POS and note submissions when back online.",
+    "Engineered a session timeout screen with a live countdown, auto-biometric prompt, and graceful logout/re-authentication flow to ensure secure session handling.",
+    "Developed a multi-step authentication flow including login with MFA/OTP support and a Terms & Conditions acceptance screen.",
+    "Built case and child facesheet screens displaying structured clinical data including case participants, home assessments, open service requests, recent notes, placements, ECANS records, siblings, and assigned workers — with collapsible animated sections using LayoutAnimation.",
+    "Created an Enter Note feature with file/image attachment support (Base64 encoding, content URI handling), date pickers, searchable dropdowns, and offline fallback queuing.",
+    "Configured Expo Router file-based navigation with tab navigation, modal screens, and protected routes with authentication guards.",
+    "Maintained TypeScript type safety across all API contracts, component props, and utility functions with strict typing and interface definitions.",
+    "Utilized react-native-svg and SVGR transformer to render custom SVG icon sets with dynamic theming across the UI."
+  ]
     },
     {
       "company": "Capgemini Private Limited",
