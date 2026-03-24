@@ -77,7 +77,7 @@
   "projects": [
     {
   "name": "Mobile Banking App with AI Chatbot",
-  "period": "February 2026 - Present",
+  "period": "February 2026 - March 2026",
   "tech": ["React Native", "Expo SDK 54", "NativeWind", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Docker", "JWT", "BCrypt"],
   "github": "https://github.com/LKONDETI/personal-finance-app",
   "description": "Cross-platform mobile banking app with AI-powered financial advisory, budget tracking, secure account management, and privacy-first design.",
@@ -87,6 +87,20 @@
     "Embedded an AI chatbot for real-time financial advisory and budget-tracking insights.",
     "Developed complex business logic including an 'upsert' system for dynamic budget limits, and soft-delete/withdraw capabilities for pending loan applications.",
     "Designed a responsive and modern mobile UI using NativeWind and Expo Router, featuring interactive pie charts, sparklines, and category-based progress indicators."
+  ]
+},
+{
+  "name": "RAGBot — Full-Stack RAG Application",
+  "period": "March 2026",
+  "tech": ["Python", "LangChain", "ChromaDB", "Claude API", "FastAPI", "React", "TypeScript", "JWT", "BCrypt"],
+  "github": "https://github.com/LKONDETI/RAG-Bot",
+  "description": "Full-stack Retrieval-Augmented Generation (RAG) application enabling document-grounded question answering with source citations using LangChain, ChromaDB, and the Claude API.",
+  "highlights": [
+    "Architected a full-stack RAG pipeline using LangChain, ChromaDB, and the Claude API (Anthropic), enabling document-grounded question answering with source citations.",
+    "Designed document ingestion pipeline with overlapping chunk splitting (1,000 chars, 200 char overlap) and Claude embeddings stored in a persistent ChromaDB vector collection for accurate semantic retrieval.",
+    "Engineered retrieval strategy to fetch the top 4 most semantically similar chunks at query time, assembled into a structured context prompt sent to Claude for grounded, hallucination-reduced answers.",
+    "Built multi-modal ingestion supporting PDF uploads, plain text files, and live URL scraping via a FastAPI backend; implemented collapsible source citations (filename + excerpt) in the React/TypeScript frontend.",
+    "Secured the API with JWT authentication (bcrypt), guest access via browser-generated IDs, and persistent multi-session chat history."
   ]
 },
   {
