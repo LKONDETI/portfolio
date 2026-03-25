@@ -32,7 +32,7 @@
       "company": "Worldwide Interactive Services",
       "role": "React/React Native Software Developer",
       "period": "August 2025 - Present",
-      "description": "Browser and App for a credit union bank",
+      "description": "Milly-OLB Browser Platform & Milly-App Mobile Banking Application",
       "highlights": [
         "Developed and maintained cross-platform banking platform with React, React Native, and Expo",
         "Integrated RESTful APIs for account management and transactions",
@@ -40,6 +40,25 @@
         "Created dashboards and visual reports to track KPIs",
         "Collaborated with cross-functional teams to deliver enhancements under tight deadlines"
       ]
+    },
+    {
+      "company": "Worldwide Interactive Services",
+      "role": "React/React Native Software Developer",
+      "period": "January 2026 - Present",
+      "description": "FivePointsCoBRIS App for social workers",
+      "highlights": [
+    "Developed and maintained a cross-platform child welfare case management mobile application (CoBRIS/Clover) using React Native, Expo, and TypeScript, targeting Android, iOS, and Web from a single codebase.",
+    "Integrated RESTful APIs for authentication, caseload management, case facesheets, and child facesheet data, including JWT token handling with access/refresh token lifecycle management.",
+    "Implemented secure token storage using expo-secure-store and AsyncStorage, with silent token refresh and biometric re-authentication (Face ID, Fingerprint, Device PIN) via expo-local-authentication.",
+    "Built an offline-first architecture with an offline queue system (SecureStore-backed) that automatically detects network connectivity via @react-native-community/netinfo and flushes queued POS and note submissions when back online.",
+    "Engineered a session timeout screen with a live countdown, auto-biometric prompt, and graceful logout/re-authentication flow to ensure secure session handling.",
+    "Developed a multi-step authentication flow including login with MFA/OTP support and a Terms & Conditions acceptance screen.",
+    "Built case and child facesheet screens displaying structured clinical data including case participants, home assessments, open service requests, recent notes, placements, ECANS records, siblings, and assigned workers — with collapsible animated sections using LayoutAnimation.",
+    "Created an Enter Note feature with file/image attachment support (Base64 encoding, content URI handling), date pickers, searchable dropdowns, and offline fallback queuing.",
+    "Configured Expo Router file-based navigation with tab navigation, modal screens, and protected routes with authentication guards.",
+    "Maintained TypeScript type safety across all API contracts, component props, and utility functions with strict typing and interface definitions.",
+    "Utilized react-native-svg and SVGR transformer to render custom SVG icon sets with dynamic theming across the UI."
+  ]
     },
     {
       "company": "Capgemini Private Limited",
@@ -56,7 +75,48 @@
     }
   ],
   "projects": [
+    {
+  "name": "Mobile Banking App with AI Chatbot",
+  "period": "February 2026 - March 2026",
+  "tech": ["React Native", "Expo SDK 54", "NativeWind", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Docker", "JWT", "BCrypt"],
+  "github": "https://github.com/LKONDETI/personal-finance-app",
+  "description": "Cross-platform mobile banking app with AI-powered financial advisory, budget tracking, secure account management, and privacy-first design.",
+  "highlights": [
+    "Built a robust RESTful API with .NET 9.0, Entity Framework Core, and PostgreSQL to handle authentication, accounts, transactions, budget limits, loans, and bill payment requests.",
+    "Engineered advanced security and user-experience features, including BCrypt password hashing, a global 'Privacy Mode' to mask sensitive balances, and JWT token management via Expo SecureStore.",
+    "Embedded an AI chatbot for real-time financial advisory and budget-tracking insights.",
+    "Developed complex business logic including an 'upsert' system for dynamic budget limits, and soft-delete/withdraw capabilities for pending loan applications.",
+    "Designed a responsive and modern mobile UI using NativeWind and Expo Router, featuring interactive pie charts, sparklines, and category-based progress indicators."
+  ]
+},
+{
+  "name": "RAGBot — Full-Stack RAG Application",
+  "period": "March 2026",
+  "tech": ["Python", "LangChain", "ChromaDB", "Claude API", "FastAPI", "React", "TypeScript", "JWT", "BCrypt"],
+  "github": "https://github.com/LKONDETI/RAG-Bot",
+  "description": "Full-stack Retrieval-Augmented Generation (RAG) application enabling document-grounded question answering with source citations using LangChain, ChromaDB, and the Claude API.",
+  "highlights": [
+    "Architected a full-stack RAG pipeline using LangChain, ChromaDB, and the Claude API (Anthropic), enabling document-grounded question answering with source citations.",
+    "Designed document ingestion pipeline with overlapping chunk splitting (1,000 chars, 200 char overlap) and Claude embeddings stored in a persistent ChromaDB vector collection for accurate semantic retrieval.",
+    "Engineered retrieval strategy to fetch the top 4 most semantically similar chunks at query time, assembled into a structured context prompt sent to Claude for grounded, hallucination-reduced answers.",
+    "Built multi-modal ingestion supporting PDF uploads, plain text files, and live URL scraping via a FastAPI backend; implemented collapsible source citations (filename + excerpt) in the React/TypeScript frontend.",
+    "Secured the API with JWT authentication (bcrypt), guest access via browser-generated IDs, and persistent multi-session chat history."
+  ]
+},
   {
+  "name": "Autonomous Application Agent with LLM",
+  "period": "January 2026 - February 2026",
+  "tech": ["Python", "LangGraph", "LangChain", "FastAPI", "React", "Playwright", "SQLite", "TailwindCSS"],
+  "github": "https://github.com/LKONDETI/apply_agent",
+  "description": "AI-powered autonomous agent that automates end-to-end job applications with a human-in-the-loop approval workflow",
+  "highlights": [
+    "Built state machine orchestration with LangGraph for a multi-step job application pipeline (ingestion → search → analysis → tailoring → submission)",
+    "Integrated LLM-based resume parsing, job fit scoring, and role-specific cover letter and resume tailoring using LangChain with OpenAI/Perplexity",
+    "Automated browser interactions with Playwright for Chromium-based form navigation and job application submission",
+    "Designed React dashboard with FastAPI backend for real-time application tracking, pending approval queue, and submission history via SQLite"
+  ]
+},
+{
     "name": "HealthTrack Daily",
     "period": "November 2025",
     "tech": ["Swift", "SwiftUI", "iOS"],
@@ -71,34 +131,8 @@
     "github" : "https://github.com/LKONDETI/HeathTrackDaily"
   },
   {
-  "name": "Autonomous Application Agent with LLM",
-  "period": "January 2026 - February 2026",
-  "tech": ["Python", "LangGraph", "LangChain", "FastAPI", "React", "Playwright", "SQLite", "TailwindCSS"],
-  "github": "https://github.com/LKONDETI/apply_agent",
-  "description": "AI-powered autonomous agent that automates job applications with human-in-the-loop workflow",
-  "highlights": [
-    "Built state machine orchestration with LangGraph for multi-step job application workflow",
-    "Integrated LLM-based resume parsing, job fit analysis, and document tailoring",
-    "Automated browser interactions with Playwright for form submission",
-    "Designed React dashboard with FastAPI backend for application tracking and approval"
-  ]
-},
-  {
-      "name": "Mobile Banking App with AI",
-      "period": "April 2025",
-      "tech": ["React Native", "Expo SDK 53", "FastAPI", "PostgreSQL", "Supabase"],
-      "github": "https://github.com/LKONDETI/personal-finance-app",
-      "description": "Cross-platform mobile banking app with AI-powered features",
-      "highlights": [
-        "Built RESTful APIs with ML-based transaction tagging",
-        "Embedded AI chatbot for real-time financial advisory",
-        "Implemented analytics dashboards with category-based visualizations",
-        "Designed responsive UI with NativeWind and charts"
-      ]
-    },
-  {
     "name": "Loan Management System",
-    "period": "January 2026 - Present",
+    "period": "January 2026 - February 2026",
     "tech": ["React Native", "Expo", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Prisma ORM", "Docker"],
     "description": "Full-stack mobile-first loan management platform with comprehensive application processing",
     "highlights": [
