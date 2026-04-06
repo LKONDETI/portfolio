@@ -103,6 +103,36 @@
     "Secured the API with JWT authentication (bcrypt), guest access via browser-generated IDs, and persistent multi-session chat history."
   ]
 },
+{
+  "name": "Claude Multi-Agent Dev System",
+  "period": "March 2026 – April 2026",
+  "tech": ["TypeScript", "Node.js", "Fastify", "Jest", "Claude Code", "JWT", "BCrypt", "pnpm", "ESLint", "Prettier"],
+  "github": "https://github.com/LKONDETI/dev_agents",
+  "description": "Multi-agent Claude Code setup with 6 specialized skills for planning, architecture, implementation, review, and testing — demonstrated end-to-end by building a production-grade JWT authentication API entirely through the agent workflow.",
+  "highlights": [
+    "Designed a 6-agent orchestration system (task-planner, architecture-agent, coding-agent, code-assistant, code-reviewer, testing-expert) with an enforced workflow order to mirror real engineering team practices.",
+    "Built a production-grade Fastify JWT auth API (register, login, refresh, logout, /me) as a live demonstration of the agent pipeline, with httpOnly refresh token rotation and in-memory revocation store.",
+    "Documented all architectural decisions as ADRs (ADR-001 through ADR-006), covering session store abstraction, revocation store, JSON Schema validation, and per-route rate limiting.",
+    "Achieved 70 Jest tests across 4 suites covering unit and integration scenarios for auth endpoints, session store, and revocation store.",
+    "Implemented rate limiting on /register, /login, and /refresh using @fastify/rate-limit, and JSON Schema input validation via Fastify's built-in schema support."
+  ]
+},
+{
+  "name": "Team Task Allocator",
+  "period": "March 2026 – April 2026",
+  "tech": ["TypeScript", "React 19", "Vite", "Tailwind CSS", "FullCalendar", "C#", ".NET 9", "ASP.NET Core", "PostgreSQL", "Entity Framework Core", "JWT", "BCrypt", "Axios", "Vitest", "React Testing Library", "date-fns"],
+  "github": "https://github.com/LKONDETI/team-task-allocator",
+  "description": "Full-stack task management system built with React and ASP.NET Core where managers create and assign tasks to employees, with role-based dashboards, employee search by name or skill, and a calendar view for deadline tracking — built end-to-end using a 6-agent Claude Code workflow.",
+  "highlights": [
+    "Implemented role-based JWT authentication (manager / employee) with claims extracted server-side, preventing privilege escalation on task creation.",
+    "Built a PostgreSQL-backed employee search using a GIN-indexed TEXT[] skills column and trigram index on name, enabling efficient server-side filtering by name or skill without in-memory joins.",
+    "Applied a strict Repository → Service → Controller layering (ADR-documented) keeping DbContext out of controllers and making the service layer fully unit-testable via mocked repositories.",
+    "Delivered separate React dashboards per role: managers get task creation with live employee search, employees get a list and FullCalendar calendar view of assigned tasks by deadline.",
+    "Developed using a structured 6-agent Claude Code workflow (task-planner → architecture-agent → coding-agent → code-reviewer → testing-expert), with all architectural decisions recorded as ADRs."
+  ]
+}
+
+
   {
   "name": "Autonomous Application Agent with LLM",
   "period": "January 2026 - February 2026",
