@@ -130,7 +130,7 @@
     "Delivered separate React dashboards per role: managers get task creation with live employee search, employees get a list and FullCalendar calendar view of assigned tasks by deadline.",
     "Developed using a structured 6-agent Claude Code workflow (task-planner → architecture-agent → coding-agent → code-reviewer → testing-expert), with all architectural decisions recorded as ADRs."
   ]
-}
+},
 
 
   {
