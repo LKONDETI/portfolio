@@ -15,7 +15,7 @@ export default function About({ profile, stats }) {
                     viewport={{ once: true }}
                     className="flex items-center gap-4 mb-8"
                 >
-                    <User size={48} className="text-cyan-400" />
+                    <User size={48} className="text-blue-500" />
                     <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
                 </motion.div>
 
@@ -44,7 +44,7 @@ export default function About({ profile, stats }) {
                                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                                 whileHover={{ scale: 1.05 }}
                                 className={`glass-strong rounded-3xl p-8 text-center border-l-4
-                        ${idx === 0 ? 'border-cyan-500' : ''}
+                        ${idx === 0 ? 'border-blue-500' : ''}
                         ${idx === 1 ? 'border-violet-500' : ''}
                         ${idx === 2 ? 'border-fuchsia-500' : ''}
                     `}

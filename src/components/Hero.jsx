@@ -13,7 +13,7 @@ export default function Hero({ profile }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent"
+                        className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-900 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent"
                     >
                         {profile.name}
                     </motion.h1>
@@ -21,7 +21,7 @@ export default function Hero({ profile }) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-2xl md:text-3xl text-cyan-300 font-light font-display"
+                        className="text-2xl md:text-3xl font-light font-display text-blue-300 [html.light_&]:text-blue-900"
                     >
                         {profile.title}
                     </motion.p>
@@ -42,7 +42,7 @@ export default function Hero({ profile }) {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="flex flex-wrap justify-center gap-6 text-[var(--text-secondary)] text-lg"
                 >
-                    <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-cyan-400 transition-all hover:scale-105">
+                    <a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-blue-500 transition-all hover:scale-105">
                         <Mail size={20} />
                         <span>{profile.email}</span>
                     </a>

@@ -6,7 +6,7 @@ export default function Skills({ skills }) {
     if (!skills) return null;
 
     const categories = [
-        { title: "Languages & Frameworks", icon: Code2, data: [...skills.languages, ...skills.frameworks], color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
+        { title: "Languages & Frameworks", icon: Code2, data: [...skills.languages, ...skills.frameworks], color: "text-blue-500", bg: "bg-blue-500/10", border: "border-blue-500/20" },
         { title: "Databases & Tools", icon: Database, data: skills.databases, color: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20" },
         { title: "ML & Data", icon: Cpu, data: skills.ml, color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
         { title: "AI & Prompt Engineering", icon: Bot, data: skills.ai, color: "text-fuchsia-400", bg: "bg-fuchsia-500/10", border: "border-fuchsia-500/20" },

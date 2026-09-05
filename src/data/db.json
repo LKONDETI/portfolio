@@ -48,7 +48,7 @@
     },
     {
       "company": "Worldwide Interactive Services",
-      "role": "React/React Native Software Developer",
+      "role": "Senior Frontend Software Developer",
       "period": "January 2026 - June 2026",
       "description": "FivePoints — CoBRIS App for Social Workers (completed, transitioned to client team)",
       "highlights": [
@@ -58,6 +58,22 @@
         "Implemented a persistent no-connectivity banner displayed across the screen to alert caseworkers in real time when the device lost network connection, reinforcing trust in the offline-first submission flow.",
         "Engineered a session-timeout screen with live countdown, auto-biometric prompt, and graceful logout/re-authentication flow; configured Expo Router with protected routes and auth guards.",
         "Delivered the completed application and handed off ownership to the FivePoints engineering team at project close."
+      ]
+    },
+    {
+      "name": "Zest Kid — Kids Activity Marketplace",
+      "role": "Software Developer",
+      "period": "May 2026",
+      "tech": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Row Level Security", "Supabase Storage", "Supabase Auth", "Supabase Edge Functions", "TypeScript", "Deno", "Stripe Connect", "flutter_test", "mocktail"],
+      "github": "",
+      "description": "A cross-platform Flutter marketplace connecting parents with independent class vendors and coaches — handling multi-tenant scheduling, class bookings, Stripe-integrated payments, and a financial dashboard, built with Claude as an AI development partner throughout.",
+      "highlights": [
+        "Architected the full backend on Supabase: Postgres database with Row Level Security for multi-tenant data isolation, Storage for media uploads, and Auth for role-based user management (parents, vendors, coaches).",
+        "Integrated Stripe Connect end-to-end: PaymentIntents for class bookings, automated platform revenue splits, and recurring subscription billing for business accounts.",
+        "Deployed Supabase Edge Functions (TypeScript/Deno) to handle payment processing and Stripe webhook events server-side, keeping credentials off the client.",
+        "Implemented a financial dashboard with monthly earnings summaries, revenue-by-class breakdowns, and Stripe Connect payout management for vendors.",
+        "Followed TDD across auth, classes, payments, subscriptions, and booking flows using flutter_test and mocktail, covering controllers, repositories, CSV parsing logic, and key UI screens.",
+        "Currently demoing the platform to prospective business clients and iterating the roadmap based on their feedback."
       ]
     },
     {
@@ -86,21 +102,6 @@
     "Engineered a multi-layered security architecture: BCrypt password hashing (work factor 12) at registration, JWT Bearer authentication with strict token validation (issuer, audience, lifetime, zero clock skew), Expo SecureStore for on-device token persistence, HTTP security headers middleware (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection), and a global React context-based Privacy Mode that masks all monetary values app-wide with a single toggle, persisted across sessions via SecureStore.",
     "Implemented idiomatic budget and loan business logic: an upsert pattern in BudgetService that creates or updates a monthly limit for a given category in a single operation (preventing duplicate records), real-time CurrentSpending tracking that auto-updates on every categorized debit transaction, and a soft-withdraw workflow for pending loan applications that validates ownership and status before transitioning to a Withdrawn state — keeping audit history intact.",
     "Designed a rich, data-driven mobile UI with NativeWind (Tailwind CSS for React Native) and Expo Router: an interactive pie chart (built with react-native-svg) that renders per-category spending slices with tap-to-expand detail, sparkline trend charts showing monthly spending history per category, color-coded category progress bars with over-budget warnings, and in-app push notifications (via Expo Notifications) for budget threshold alerts (≥ 80% used), large transaction detection (> $200), and upcoming loan payment reminders (within 3 days of due date)."
-  ]
-},
-{
-  "name": "Zest Kid — Kids Activity Marketplace",
-  "period": "May 2026 - Present",
-  "tech": ["Flutter", "Dart", "Supabase", "PostgreSQL", "Row Level Security", "Supabase Storage", "Supabase Auth", "Supabase Edge Functions", "TypeScript", "Deno", "Stripe Connect", "flutter_test", "mocktail"],
-  "github": "",
-  "description": "A cross-platform Flutter marketplace connecting parents with independent class vendors and coaches — handling multi-tenant scheduling, class bookings, Stripe-integrated payments, and a financial dashboard, built with Claude as an AI development partner throughout.",
-  "highlights": [
-    "Architected the full backend on Supabase: Postgres database with Row Level Security for multi-tenant data isolation, Storage for media uploads, and Auth for role-based user management (parents, vendors, coaches).",
-    "Integrated Stripe Connect end-to-end: PaymentIntents for class bookings, automated platform revenue splits, and recurring subscription billing for business accounts.",
-    "Deployed Supabase Edge Functions (TypeScript/Deno) to handle payment processing and Stripe webhook events server-side, keeping credentials off the client.",
-    "Implemented a financial dashboard with monthly earnings summaries, revenue-by-class breakdowns, and Stripe Connect payout management for vendors.",
-    "Followed TDD across auth, classes, payments, subscriptions, and booking flows using flutter_test and mocktail, covering controllers, repositories, CSV parsing logic, and key UI screens.",
-    "Currently demoing the platform to prospective business clients and iterating the roadmap based on their feedback."
   ]
 },
 {

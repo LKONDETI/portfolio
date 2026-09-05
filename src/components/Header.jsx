@@ -68,7 +68,7 @@ export default function Header({ activeSection, scrollToSection, theme, toggleTh
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-cyan-400"
+              className="p-2 rounded-full hover:bg-white/10 transition-colors text-slate-400 hover:text-blue-500"
               aria-label="Toggle Theme"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
@@ -107,7 +107,7 @@ export default function Header({ activeSection, scrollToSection, theme, toggleTh
                         }
                       }, 100);
                     }}
-                    className={`text-lg font-medium text-left ${activeSection === item ? 'text-cyan-400' : 'text-[var(--text-tertiary)]'
+                    className={`text-lg font-medium text-left ${activeSection === item ? 'text-blue-500' : 'text-[var(--text-tertiary)]'
                       }`}
                   >
                     {item.charAt(0).toUpperCase() + item.slice(1)}

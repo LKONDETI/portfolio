@@ -10,7 +10,7 @@ export default function Footer({ profile }) {
                 <div className="flex gap-8">
                     {profile.socials.linkedin && (
                         <a href={profile.socials.linkedin} target="_blank" rel="noreferrer"
-                            className="p-3 bg-white/5 rounded-full hover:bg-cyan-500/20 hover:text-cyan-400 transition-all hover:scale-110 text-[var(--text-tertiary)]">
+                            className="p-3 bg-white/5 rounded-full hover:bg-blue-500/20 hover:text-blue-500 transition-all hover:scale-110 text-[var(--text-tertiary)]">
                             <Linkedin size={24} />
                         </a>
                     )}
