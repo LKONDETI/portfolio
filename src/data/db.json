@@ -31,6 +31,19 @@
   "experience": [
     {
       "company": "Worldwide Interactive Services",
+      "role": "Lead Software Developer",
+      "period": "August 2025 - Present",
+      "description": "Invest IQ- An Investment Tracking and Portfolio Management Platform",
+      "highlights": [
+        "Lead the development of a cross-platform investment tracking and portfolio management application using React, Vite, and TypeScript, providing users with real-time market data and portfolio insights.",
+        "Implemented secure authentication and authorization using JWT tokens, ensuring user data privacy and compliance with financial regulations.",
+        "Integrated third-party APIs for real-time stock market data, enabling users to track their investments and perform the CRUD operations.",
+        "Implemented to show the real-time portfolio performance with interactive charts and visualizations using Chart.js, enhancing user engagement and decision-making.",
+        "Developed a responsive and intuitive user interface with Tailwind CSS, enhancing user experience across mobile and web platforms."
+      ]
+    },
+    {
+      "company": "Worldwide Interactive Services",
       "role": "React/React Native Software Developer",
       "period": "August 2025 - Present",
       "description": "Milly — OLB Browser Platform & Mobile Banking Application",
