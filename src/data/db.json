@@ -32,7 +32,7 @@
     {
       "company": "Worldwide Interactive Services",
       "role": "Lead Software Developer",
-      "period": "August 2025 - Present",
+      "period": "August 2026 - Present",
       "description": "Invest IQ- An Investment Tracking and Portfolio Management Platform",
       "highlights": [
         "Lead the development of a cross-platform investment tracking and portfolio management application using React, Vite, and TypeScript, providing users with real-time market data and portfolio insights.",
@@ -104,6 +104,20 @@
   ],
   "projects": [
     {
+  "name": "Ledger — AI-Powered Personal Expense Tracker",
+  "period": "August 2026 - Present",
+  "tech": ["React 19", "React Router 7", "Vite", "Recharts", "Lucide React", ".NET 9.0", "Entity Framework Core", "PostgreSQL (Neon)", "Npgsql", "PdfPig", "Azure AI Foundry (Claude 3.5 Sonnet)", "JWT", "BCrypt"],
+  "github": "https://github.com/LKONDETI/expense-tracker",
+  "description": "A full-stack personal finance web application that turns bank and credit card PDF statements into actionable spending insights. Users upload a statement, an AI service automatically parses and categorizes every transaction, and they review and correct the results before saving. They can then explore interactive analytics dashboards, auto-detected subscriptions, AI-generated spending insights, and a natural-language chat interface that answers questions using their own transaction data. Built with a React 19 + Vite frontend and a .NET 9.0 RESTful API backed by Entity Framework Core and serverless PostgreSQL.",
+  "highlights": [
+    "Architected a full-stack application with a React 19 + React Router 7 + Vite frontend and a .NET 9.0 Web API using Entity Framework Core and Npgsql on serverless PostgreSQL (Neon), organized into controllers for Auth, Statements, Transactions, Analytics, Dashboard, Insights, and Settings, with EF Core migrations managing the schema (Users, Transactions, Statements, MerchantCategoryMaps, CategoryBudgets).",
+    "Built an automated PDF statement ingestion pipeline: a coordinate-based text extractor using PdfPig (bounding-box, Y-bucket row grouping) parses statement rows, which are categorized by AI and presented in a review step where users correct categories before saving; a merchant-category memory persists those corrections so future uploads are categorized more accurately.",
+    "Integrated Claude 3.5 Sonnet via Azure AI Foundry behind an IAiService abstraction for transaction categorization, AI-generated insights (projected month-end spend, dining vs. average, unused subscriptions, advice bullets), and a natural-language 'Ask' chat grounded in the user's own transactions; a local MockAiService automatically takes over when credentials are not configured, enabling zero-cost offline development and testing.",
+    "Developed interactive analytics and dashboards with Recharts: a monthly income vs. outgo bar chart, a category donut chart with a month selector, spend-by-category progress bars against monthly and per-category budgets, stat cards, and automatic detection of recurring subscriptions across multiple billing cycles.",
+    "Implemented secure authentication and privacy controls: JWT Bearer authentication with BCrypt password hashing, a transactions table with search, category filtering, inline editing, deletion and a running balance column, a privacy 'trust wall' explaining data handling, and a one-click delete-all-data flow with a confirmation modal; polished the UX with loading skeletons, empty states, error banners with retry, and timezone-safe date formatting."
+  ]
+},
+{
   "name": "Mobile Banking App with AI Financial Advisor",
   "period": "February 2026 - March 2026",
   "tech": ["React Native", "Expo SDK 54", "Expo Router", "NativeWind", "React Native SVG", ".NET 9.0", "Entity Framework Core", "PostgreSQL", "Amazon Bedrock (Nova Lite)", "Docker", "JWT", "BCrypt", "Expo SecureStore", "Expo Notifications"],
